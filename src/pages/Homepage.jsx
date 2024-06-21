@@ -9,7 +9,7 @@ function Homepage() {
 
   const getPosts = async () => {
     const response = await axios.get(
-      `http://localhost:4001/trips?keywords=${searchInput}`
+      `https://teawnaidee-techup.up.railway.app/trips?keywords=${searchInput}`
     );
     setPosts(response.data.data);
   };
