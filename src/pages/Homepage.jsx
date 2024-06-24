@@ -9,7 +9,7 @@ function Homepage() {
 
   const getPosts = async () => {
     const response = await axios.get(
-      `https://teawnaidee-techup.up.railway.app/trips?keywords=${searchInput}`
+      `https://travelpage-data-techup.up.railway.app/trips?keywords=${searchInput}`
     );
     setPosts(response.data.data);
   };
