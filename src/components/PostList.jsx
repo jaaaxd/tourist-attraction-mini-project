@@ -1,6 +1,6 @@
 function PostList(props) {
   const characterLimit = (content) => {
-    const maxChars = 100;
+    const maxChars = 120;
     return content.length > maxChars
       ? content.substring(0, maxChars) + " ... "
       : content;

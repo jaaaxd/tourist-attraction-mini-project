@@ -185,3 +185,42 @@ li:hover {
 .share-button:active {
   transform: scale(0.9);
 }
+
+/*---Responsive---*/
+
+@media (max-width: 768px) {
+  .post-list {
+    width: 92%;
+  }
+
+  .post-title {
+    font-size: 22px;
+  }
+
+  p,li,ul, .category {
+    font-size: 15px;
+  }
+
+  .additional-photo {
+    visibility: hidden;
+  }
+
+  .post-item {
+    flex-direction: column;
+    background-color: rgb(249, 249, 249);
+    border-radius: 16px;
+    padding: 16px;
+    gap:20px;
+    margin-top: 1rem;
+  }
+
+  .main-image {
+    height: 170px;
+    border-radius: 10px;
+  }
+
+  .post-footer {
+    height: 42px;
+  }
+  
+}
