@@ -155,7 +155,6 @@ li:hover {
 .post-footer {
   display: flex;
   justify-content: space-between;
-  position: relative;
 }
 
 .additional-photo {
@@ -176,7 +175,6 @@ li:hover {
   height: 35px;
   align-self: self-end;
   cursor: pointer;
-  margin-left: 25px;
   transition: transform 0.05s ease;
 }
 
@@ -249,5 +247,6 @@ li:hover {
 
   .post-footer {
     height: 42px;
+    justify-content: end;
   }
 }
