@@ -1,4 +1,7 @@
+import { useState } from "react";
+
 function PostList(props) {
+  const [showCopyPopup, setShowCopyPopUp] = useState(false);
   const characterLimit = (content) => {
     const maxChars = 120;
     return content.length > maxChars
@@ -55,6 +58,14 @@ function PostList(props) {
   return (
     <div className="post-list">
       {props.posts.map((post, index) => {
+        const handleShareClick = () => {
+          navigator.clipboard.writeText(post.url);
+          setShowCopyPopUp(true);
+          setTimeout(() => {
+            setShowCopyPopUp(false);
+          }, 1000);
+        };
+
         return (
           <div className="post-item" key={index}>
             <img className="main-image" src={post.photos[0]} />
@@ -81,15 +92,15 @@ function PostList(props) {
                 <img
                   className="share-button"
                   src="https://cdn-icons-png.freepik.com/512/6994/6994770.png"
-                  onClick={() => {
-                    navigator.clipboard.writeText(post.url);
-                  }}
+                  onClick={handleShareClick}
+                  alt="copy to clipboard"
                 />
               </div>
             </div>
           </div>
         );
       })}
+      {showCopyPopup && <div className="copy">Copied to clipboard!</div>}
     </div>
   );
 }
